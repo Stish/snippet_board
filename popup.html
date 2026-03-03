@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snippet Board</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Snippet Board</h1>
+        <button id="toggleFormButton" class="icon-btn" type="button" title="Add snippet" aria-label="Add snippet">+</button>
+      </header>
+
+      <form id="snippetForm" class="form hidden">
+        <input id="titleInput" type="text" maxlength="80" placeholder="Snippet title" required />
+        <input id="createTagInput" type="text" maxlength="40" placeholder="Tag (optional)" list="tagSuggestions" />
+        <div id="createValuesList" class="value-editor-list"></div>
+        <button id="addCreateValueButton" type="button">+ Add value</button>
+        <button type="submit">Save snippet</button>
+      </form>
+
+      <section class="controls" aria-label="Snippet controls">
+        <input id="searchInput" type="search" placeholder="Search name" aria-label="Quick search by name" />
+        <select id="tagFilterSelect" aria-label="Filter by tag">
+          <option value="">Tag: All</option>
+        </select>
+        <select id="sortSelect" aria-label="Sort by name">
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+      </section>
+
+      <section class="transfer-controls" aria-label="Import and export snippets">
+        <button id="exportButton" type="button">Export JSON</button>
+        <button id="importButton" type="button">Import JSON</button>
+        <button id="deleteAllButton" type="button" class="danger-btn">Delete All</button>
+        <div id="deleteAllConfirm" class="confirm-inline hidden" aria-live="polite">
+          <span>Delete all?</span>
+          <button id="deleteAllYesButton" type="button" class="confirm-btn">Yes</button>
+          <button id="deleteAllNoButton" type="button" class="confirm-btn">No</button>
+        </div>
+        <input id="importFileInput" type="file" accept="application/json,.json" class="hidden" />
+      </section>
+      <p id="transferStatus" class="transfer-status" aria-live="polite"></p>
+
+      <ul id="snippetList" class="snippet-list"></ul>
+      <p id="emptyState" class="empty-state">No snippets yet.</p>
+      <datalist id="tagSuggestions"></datalist>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

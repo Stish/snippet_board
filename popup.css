@@ -1,0 +1,340 @@
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 260px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  overflow-y: auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+}
+
+.form {
+  display: grid;
+  gap: 8px;
+}
+
+.value-editor-list {
+  display: grid;
+  gap: 8px;
+}
+
+.value-editor-item {
+  display: grid;
+  gap: 6px;
+  border: 1px solid #8f8f8f;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.value-editor-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.value-editor-actions.is-confirming {
+  grid-template-columns: 1fr auto auto auto;
+}
+
+.remove-value-btn {
+  width: 42px;
+  min-width: 42px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  padding: 0;
+}
+
+.remove-value-btn:hover {
+  border-color: #cc3d3d;
+  background-color: color-mix(in srgb, #cc3d3d 14%, transparent);
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.option-row input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px 62px;
+  gap: 8px;
+}
+
+.controls > * {
+  min-width: 0;
+}
+
+.transfer-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.danger-btn {
+  border-color: #cc3d3d;
+}
+
+.danger-btn:hover {
+  background-color: color-mix(in srgb, #cc3d3d 14%, transparent);
+}
+
+.confirm-inline {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.confirm-inline.hidden {
+  display: none;
+}
+
+.transfer-status {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.8;
+  min-height: 16px;
+}
+
+.transfer-status.error {
+  color: #cc3d3d;
+}
+
+#searchInput,
+#sortSelect {
+  padding: 6px 8px;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  border-radius: 8px;
+  border: 1px solid #8f8f8f;
+  padding: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus-visible {
+  outline: none;
+  border-color: #6b8cff;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #6b8cff 25%, transparent);
+}
+
+button:hover {
+  background-color: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.snippet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  max-height: none;
+  overflow: visible;
+}
+
+.snippet-item {
+  border: 1px solid #8f8f8f;
+  border-radius: 8px;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.snippet-item:hover {
+  border-color: #6b8cff;
+  background-color: color-mix(in srgb, #6b8cff 7%, transparent);
+  box-shadow: 0 1px 6px color-mix(in srgb, #6b8cff 18%, transparent);
+}
+
+.snippet-item.is-editing {
+  border-color: #6b8cff;
+  background-color: color-mix(in srgb, #6b8cff 11%, transparent);
+  box-shadow: 0 2px 10px color-mix(in srgb, #6b8cff 22%, transparent);
+}
+
+.snippet-title {
+  margin: 0;
+  font-size: 14px;
+}
+
+.snippet-header {
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  gap: 6px;
+  align-items: center;
+}
+
+.edit-inline-btn {
+  width: 38px;
+  min-width: 38px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+
+.edit-inline-btn:hover {
+  border-color: #6b8cff;
+  background-color: color-mix(in srgb, #6b8cff 14%, transparent);
+}
+
+.snippet-tag {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.snippet-content {
+  margin: 0;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.snippet-values {
+  display: grid;
+  gap: 6px;
+}
+
+.snippet-value-item {
+  display: grid;
+  grid-template-columns: 1fr 38px 38px;
+  gap: 6px;
+  align-items: center;
+}
+
+.value-copy-btn,
+.value-visibility-btn {
+  width: 38px;
+  min-width: 38px;
+  height: 32px;
+  padding: 6px;
+}
+
+.value-visibility-btn.is-placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.edit-delete-section {
+  display: grid;
+  gap: 6px;
+}
+
+.toggle-value-btn {
+  min-width: 44px;
+}
+
+.confirm-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.confirm-text {
+  margin: 0;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.confirm-btn {
+  height: 32px;
+  min-width: 42px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.edit-form {
+  display: grid;
+  gap: 6px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-actions button {
+  flex: 1;
+}
+
+.empty-state {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.75;
+}

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Snippet Board",
+  "description": "Save and quickly copy text snippets from a right sidebar.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage", "sidePanel"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "action": {
+    "default_title": "Snippet Board",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  }
+}
