@@ -2,9 +2,19 @@
 
 ## About
 
-Snippet Board is a lightweight Chrome side-panel extension for storing and reusing text snippets while you browse.
+Snippet Board is a Chrome side-panel extension for storing and reusing text snippets while you browse.
 It lets you organize snippets with tags, manage multiple sub-values per snippet, quickly copy individual values, and back up your data with JSON import/export.
 All snippet data is stored locally in your Chrome profile.
+
+## Chrome Web Store
+
+Snippet Board is published on the Chrome Web Store:
+
+- https://chromewebstore.google.com/detail/jnbmkcfajdcmbkbacmndlcknbdamgomm?utm_source=item-share-cb
+
+## Screenshot
+
+![Snippet Board Screenshot](snippet_board_3.png)
 
 ## Load in Chrome
 
